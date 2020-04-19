@@ -127,4 +127,38 @@ public class MoodAnalyserTest {
             Assert.assertEquals(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD, e.type);
         }
     }
+    @Test
+    public void givenMoodAnalyser_setHappyMessage_withReflector_shouldReturnHappy() throws InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchFieldException, ClassNotFoundException {
+        try {
+            Constructor<?> moodAnalyserConstructor = MoodAnalyserReflector.getConstructor("com.BridgeLabz.moodAnalyser.MoodAnalyser");
+            MoodAnalyser moodAnalyserObject = MoodAnalyserReflector.createMoodAnalyserObject(moodAnalyserConstructor);
+            MoodAnalyserReflector.setVariableValues(moodAnalyserObject, "message", "I am in Happy mood");
+            Object result = MoodAnalyserReflector.invokeMethod(moodAnalyserObject, "createMood");
+            Assert.assertEquals("Happy", result);
+        } catch (MoodAnalysisException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void givenMoodAnalyser_field_WhenImproperShould_throwException() throws  InstantiationException, IllegalAccessException, InvocationTargetException, ClassNotFoundException, NoSuchFieldException {
+        try {
+            Constructor<?> moodAnalyserConstructor = MoodAnalyserReflector.getConstructor("com.BridgeLabz.moodAnalyser.MoodAnalyser");
+            MoodAnalyser moodAnalyserObject = MoodAnalyserReflector.createMoodAnalyserObject(moodAnalyserConstructor);
+            MoodAnalyserReflector.setVariableValues(moodAnalyserObject, "Message", "I am in Happy mood");
+            Object result = MoodAnalyserReflector.invokeMethod(moodAnalyserObject, "analyseMood");
+        } catch (MoodAnalysisException e) {
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.NO_SUCH_FIELD, e.type);
+        }
+    }
+    @Test
+    public void givenMoodAnalyser_SettingNullMessage_withReflector_shouldThrowException() throws MoodAnalysisException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchFieldException, ClassNotFoundException {
+        try {
+            Constructor moodAnalyserConstructor = MoodAnalyserReflector.getConstructor("com.BridgeLabz.moodAnalyser.MoodAnalyser");
+            MoodAnalyser moodAnalyserObject = MoodAnalyserReflector.createMoodAnalyserObject(moodAnalyserConstructor);
+            MoodAnalyserReflector.setVariableValues(moodAnalyserObject, "message", null);
+        } catch (MoodAnalysisException e) {
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.NULL, e.type);
+        }
+    }
+
 }

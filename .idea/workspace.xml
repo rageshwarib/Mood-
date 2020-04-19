@@ -13,15 +13,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/BridgeLabz/moodAnalyser/MoodAnalyser.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/BridgeLabz/moodAnalyser/MoodAnalyser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/BridgeLabz/moodAnalyser/MoodAnalysisException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/BridgeLabz/moodAnalyser/MoodAnalysisException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/BridgeLabz/moodAnalyser/MoodAnalyserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/BridgeLabz/moodAnalyser/MoodAnalyserTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.BridgeLabz.moodAnalyser.MoodAnalyserTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.BridgeLabz.moodAnalyser.MoodAnalyserTest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.BridgeLabz.moodAnalyser.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.BridgeLabz.moodAnalyser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.BridgeLabz.moodAnalyser.MoodAnalyserTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.BridgeLabz.moodAnalyser.MoodAnalyserTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/BridgeLabz/moodAnalyser/MoodAnalyserReflector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BridgeLabz/moodAnalyser/MoodAnalyserReflector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/BridgeLabz/moodAnalyser/MoodAnalysisException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/BridgeLabz/moodAnalyser/MoodAnalysisException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/BridgeLabz/moodAnalyser/MoodAnalyserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/BridgeLabz/moodAnalyser/MoodAnalyserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,12 +116,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="MoodAnalyserTest.givenMoodAnalyserClassName_whenConstructorNotProper_shouldThrowMoodAnalysisException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MoodAnalyserTest.givenMoodAnalyserWithParameterConstructor_whenProper_shouldReturnObject" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.BridgeLabz.moodAnalyser.MoodAnalyserTest.givenMoodAnalyserClassName_whenConstructorNotProper_shouldThrowMoodAnalysisException&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.BridgeLabz.moodAnalyser.MoodAnalyserTest.givenMoodAnalyserWithParameterConstructor_whenProper_shouldReturnObject&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -135,12 +136,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="MoodAnalyserTest.givenMoodAnalyserWithParameterConstructor_whenProper_shouldReturnObject" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MoodAnalyserTest.givenMoodAnalyser_field_WhenImproperShould_throwException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.BridgeLabz.moodAnalyser.MoodAnalyserTest.givenMoodAnalyserWithParameterConstructor_whenProper_shouldReturnObject&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.BridgeLabz.moodAnalyser.MoodAnalyserTest.givenMoodAnalyser_field_WhenImproperShould_throwException&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -178,10 +179,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.MoodAnalyserTest" />
+        <item itemvalue="Gradle.MoodAnalyserTest.givenMoodAnalyser_field_WhenImproperShould_throwException" />
         <item itemvalue="Gradle.MoodAnalyserTest.givenHappyMessage_whenImproper_shouldThrowMoodAnalysisException" />
         <item itemvalue="Gradle.MoodAnalyserTest.givenMoodAnalysrClassName_whenImproper_shouldThrowMoodAnalysisException" />
         <item itemvalue="Gradle.MoodAnalyserTest.givenMoodAnalyserWithParameterConstructor_whenProper_shouldReturnObject" />
-        <item itemvalue="Gradle.MoodAnalyserTest.givenMoodAnalyserClassName_whenConstructorNotProper_shouldThrowMoodAnalysisException" />
       </list>
     </recent_temporary>
   </component>
@@ -203,22 +204,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="114" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1587311959314" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1587321728577">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1587323546410">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587321728577" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1587321728577">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587323546410" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1587323546410">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587321728577" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1587321728577">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587323546410" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1587323546410">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587321728577" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1587321728577">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587323546410" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1587323546410">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587321728577" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587323546410" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1587315291423">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
