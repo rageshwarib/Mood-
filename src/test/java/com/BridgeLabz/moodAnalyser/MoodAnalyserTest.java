@@ -21,6 +21,7 @@ public class MoodAnalyserTest {
         MoodAnalyser moodAnalyser = new MoodAnalyser("I am in any Mood");
         String mood = moodAnalyser.analyseMood();
         Assert.assertEquals("Happy", mood);
+
     }
     @Test
     public void givenNullMessage_whenAnalyseMood_shouldThrowMoodAnalysisException() {
@@ -29,8 +30,15 @@ public class MoodAnalyserTest {
             String mood = moodAnalyser.analyseMood();
         }catch (MoodAnalysisException moodAnalysisException){
             Assert.assertEquals("Invalid Message", moodAnalysisException.getMessage());
-
         }
     }
-
+    @Test
+    public void givenEmptyMessage_whenAnalyseMood_shouldThrowMoodAnalysisException() {
+        try {
+            MoodAnalyser moodAnalyser = new MoodAnalyser(" ");
+            moodAnalyser.analyseMood();
+        } catch (MoodAnalysisException moodAnalysisException) {
+            Assert.assertEquals("Empty Mood",moodAnalysisException.getMessage());
+        }
+    }
 }
