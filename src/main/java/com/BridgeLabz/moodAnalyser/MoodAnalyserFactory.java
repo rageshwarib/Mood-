@@ -16,7 +16,8 @@ public class MoodAnalyserFactory {
             throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD, "Method not found");
         }
     }
-    public static MoodAnalyser createMoodAnalyse(Constructor<?> moodAnalyserConstructor, Object... message) throws IllegalAccessException, InvocationTargetException, InstantiationException, InvocationTargetException {
+    public static MoodAnalyser createMoodAnalyserObject(Constructor<?> moodAnalyserConstructor, Object... message) throws IllegalAccessException, InvocationTargetException, InstantiationException, InvocationTargetException {
         return (MoodAnalyser)moodAnalyserConstructor.newInstance(message);
     }
+
 }

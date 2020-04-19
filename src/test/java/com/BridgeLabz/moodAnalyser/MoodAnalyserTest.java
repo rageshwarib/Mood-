@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.concurrent.Callable;
 
 public class MoodAnalyserTest {
     @Test
@@ -48,7 +49,7 @@ public class MoodAnalyserTest {
     public void givenMoodAnalyserClassName_whenInProper_shouldReturnObject() throws MoodAnalysisException, IllegalAccessException, InstantiationException, InvocationTargetException {
         MoodAnalyser moodAnalyser = new MoodAnalyser();
         Constructor<?> moodAnalyserConstructor = MoodAnalyserFactory.getConstructor("com.BridgeLabz.moodAnalyser.MoodAnalyser");
-        MoodAnalyser moodAnalyserObj = MoodAnalyserFactory.createMoodAnalyse(moodAnalyserConstructor);
+        MoodAnalyser moodAnalyserObj = MoodAnalyserFactory.createMoodAnalyserObject(moodAnalyserConstructor);
         boolean check = moodAnalyser.equals(moodAnalyserObj);
         Assert.assertEquals(true, check);
     }
@@ -56,7 +57,7 @@ public class MoodAnalyserTest {
     @Test
     public void givenMoodAnalyserClassName_whenImproper_shouldThrowMoodAnalysisException() throws IllegalAccessException, InstantiationException, InvocationTargetException {
         try {
-            Constructor<?> moodAnalyserConstructor = MoodAnalyserFactory.getConstructor("MoodeAnalyser");
+            MoodAnalyserFactory.getConstructor("MoodeAnalyser");
         } catch (MoodAnalysisException e) {
             Assert.assertEquals(MoodAnalysisException.ExceptionType.CLASS_NOT_FOUND, e.type);
         }
@@ -69,5 +70,45 @@ public class MoodAnalyserTest {
         } catch (MoodAnalysisException e) {
             Assert.assertEquals(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD, e.type);
         }
+}
+
+    @Test
+    public void givenMoodAnalyserClassName_whenProper_shouldReturnObject() throws IllegalAccessException, InstantiationException, InvocationTargetException, MoodAnalysisException {
+        MoodAnalyser moodAnalyser = new MoodAnalyser();
+        Constructor<?> moodAnalyserConstructor = MoodAnalyserFactory.getConstructor("com.BridgeLabz.moodAnalyser.MoodAnalyser");
+        MoodAnalyser moodAnalyserObject = MoodAnalyserFactory.createMoodAnalyserObject(moodAnalyserConstructor);
+        boolean check = moodAnalyser.equals(moodAnalyserObject);
+        Assert.assertEquals(true, check);
+    }
+    @Test
+    public void givenMoodAnalyserWithParameterConstructor_whenProper_shouldReturnObject() throws IllegalAccessException, InstantiationException, InvocationTargetException {
+        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in Happy mood");
+        Constructor<?> moodAnalyserConstructor = null;
+        try {
+            moodAnalyserConstructor = MoodAnalyserFactory.getConstructor("com.BridgeLabz.moodAnalyser.MoodAnalyser", String.class);
+        } catch (MoodAnalysisException e) {
+            e.printStackTrace();
+        }
+        MoodAnalyser moodAnalyserObject = MoodAnalyserFactory.createMoodAnalyserObject(moodAnalyserConstructor, "I am in Happy mood");
+        boolean check = moodAnalyser.equals(moodAnalyserObject);
+        Assert.assertEquals(true, check);
+    }
+    @Test
+    public void givenMoodAnalysrClassName_whenImproper_shouldThrowMoodAnalysisException(){
+        try {
+             MoodAnalyserFactory.getConstructor("MoodeAnalyser");
+        }catch (MoodAnalysisException e){
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.CLASS_NOT_FOUND, e.type);
+        }
+    }
+    @Test
+    public void givenMoodAnalysrClassName_whenConstructorNotProper_shouldThrowMoodAnalysisException() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in Happy mood");
+        Constructor<?> moodAnalyserConstructor = null;
+        try {
+            moodAnalyserConstructor = MoodAnalyserFactory.getConstructor("com.BridgeLabz.moodAnalyser.MoodAnalyser", String.class);
+        } catch (MoodAnalysisException e) {
+            e.printStackTrace();
+      }
     }
 }
