@@ -4,7 +4,7 @@ public class MoodAnalyser {
 
     public String message;
 
-    public MoodAnalyser(String message){
+    public MoodAnalyser(String message) {
         this.message = message;
     }
 
@@ -13,6 +13,6 @@ public class MoodAnalyser {
             return "Sad";
         if (message.contains("Happy"))
             return "Happy";
-        return "Invalid mood";
+        return "Happy";
     }
 }
