@@ -117,4 +117,14 @@ public class MoodAnalyserTest {
         Object result = MoodAnalyserReflector.invokeMethod(moodAnalyserObject, "analyseMood");
         Assert.assertEquals("Happy", result);
     }
+    @Test
+    public void givenHappyMessage_whenImproper_shouldThrowMoodAnalysisException() throws InstantiationException, IllegalAccessException, InvocationTargetException {
+        try {
+            Constructor<?> moodAnalyserConstructor = MoodAnalyserReflector.getConstructor("com.BridgeLabz.moodAnalyser.MoodAnalyser", String.class);
+            MoodAnalyser moodAnalyserObject = MoodAnalyserReflector.createMoodAnalyserObject(moodAnalyserConstructor, "I am in Happy mood");
+            Object result = MoodAnalyserReflector.invokeMethod(moodAnalyserObject, "analyserWrongMood");
+        } catch (MoodAnalysisException e) {
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD, e.type);
+        }
+    }
 }
