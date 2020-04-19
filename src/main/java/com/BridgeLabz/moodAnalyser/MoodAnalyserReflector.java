@@ -4,7 +4,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class MoodAnalyserFactory {
+public class MoodAnalyserReflector {
     public static Constructor<?> getConstructor(String className, Class<?>... parameter) throws MoodAnalysisException {
         try {
             Class<?> moodAnalyserClass = Class.forName(className);
