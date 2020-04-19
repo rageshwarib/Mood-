@@ -3,6 +3,9 @@ package com.BridgeLabz.moodAnalyser;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 public class MoodAnalyserTest {
     @Test
     public void givenSadMessage_whenGetMood_ShouldReturnsadMood() throws MoodAnalysisException {
@@ -39,6 +42,32 @@ public class MoodAnalyserTest {
             moodAnalyser.analyseMood();
         } catch (MoodAnalysisException moodAnalysisException) {
             Assert.assertEquals("Empty Mood",moodAnalysisException.getMessage());
+        }
+    }
+    @Test
+    public void givenMoodAnalyserClassName_whenInProper_shouldReturnObject() throws MoodAnalysisException, IllegalAccessException, InstantiationException, InvocationTargetException {
+        MoodAnalyser moodAnalyser = new MoodAnalyser();
+        Constructor<?> moodAnalyserConstructor = MoodAnalyserFactory.getConstructor("com.BridgeLabz.moodAnalyser.MoodAnalyser");
+        MoodAnalyser moodAnalyserObj = MoodAnalyserFactory.createMoodAnalyse(moodAnalyserConstructor);
+        boolean check = moodAnalyser.equals(moodAnalyserObj);
+        Assert.assertEquals(true, check);
+    }
+
+    @Test
+    public void givenMoodAnalyserClassName_whenImproper_shouldThrowMoodAnalysisException() throws IllegalAccessException, InstantiationException, InvocationTargetException {
+        try {
+            Constructor<?> moodAnalyserConstructor = MoodAnalyserFactory.getConstructor("MoodeAnalyser");
+        } catch (MoodAnalysisException e) {
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.CLASS_NOT_FOUND, e.type);
+        }
+    }
+
+    @Test
+    public void givenMoodAnalyserClassName_whenConstructorNotProper_shouldThrowMoodAnalysisException() throws IllegalAccessException, InstantiationException,InvocationTargetException {
+        try {
+            Constructor<?> moodAnalyserConstructor = MoodAnalyserFactory.getConstructor("com.BridgeLabz.moodAnalyser.MoodAnalyser", Integer.class);
+        } catch (MoodAnalysisException e) {
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD, e.type);
         }
     }
 }
