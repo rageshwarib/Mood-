@@ -5,7 +5,6 @@ import org.junit.Test;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.concurrent.Callable;
 
 public class MoodAnalyserTest {
     @Test
@@ -110,5 +109,12 @@ public class MoodAnalyserTest {
         } catch (MoodAnalysisException e) {
             e.printStackTrace();
       }
+    }
+    @Test
+    public void givenHappyMessageUsingReflection_whenProper_shouldReturnHappyMood() throws MoodAnalysisException, IllegalAccessException, InstantiationException, InvocationTargetException {
+        Constructor<?> moodAnalyserConstructor = MoodAnalyserReflector.getConstructor("com.BridgeLabz.moodAnalyser.MoodAnalyser", String.class);
+        MoodAnalyser moodAnalyserObject = MoodAnalyserReflector.createMoodAnalyserObject(moodAnalyserConstructor, "I am in Happy mood");
+        Object result = MoodAnalyserReflector.invokeMethod(moodAnalyserObject, "analyseMood");
+        Assert.assertEquals("Happy", result);
     }
 }

@@ -20,14 +20,15 @@ public class MoodAnalyserReflector {
         return (MoodAnalyser) moodAnalyserConstructor.newInstance(message);
     }
 
-    public static Object invokeMethod(Object moodAnalyserObject, String analyseMood) throws MoodAnalysisException, IllegalAccessException, InvocationTargetException {
+    public static Object invokeMethod(Object moodAnalyserObject, String methodName) throws MoodAnalysisException, IllegalAccessException, InvocationTargetException {
         try {
             Class objectClass = moodAnalyserObject.getClass();
-            Method moodMethod = objectClass.getMethod(analyseMood);
-            Object result = moodMethod.invoke(moodAnalyserObject);
+            Method method = objectClass.getMethod(methodName);
+            Object result = method.invoke(moodAnalyserObject);
             return result;
         } catch (NoSuchMethodException e) {
             throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD, "Method not found");
         }
     }
+
 }
