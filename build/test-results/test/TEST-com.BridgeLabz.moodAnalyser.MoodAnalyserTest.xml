@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-04-19T15:45:54" hostname="rageshwari" time="0.019">
+<testsuite name="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2020-04-19T18:42:06" hostname="rageshwari" time="0.031">
   <properties/>
-  <testcase name="givenHappyMessge_whenGetMood_shouldReturnhappyMood" classname="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" time="0.004"/>
-  <testcase name="givenSadMessage_whenGetMood_ShouldReturnsadMood" classname="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" time="0.002"/>
+  <testcase name="whenGetAnyMood_shouldReturnhappyMood" classname="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" time="0.002"/>
+  <testcase name="givenHappyMessage_whenImproper_shouldThrowMoodAnalysisException" classname="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" time="0.003"/>
+  <testcase name="givenNullMessage_whenAnalyseMood_shouldThrowMoodAnalysisException" classname="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" time="0.001"/>
+  <testcase name="givenMoodAnalysrClassName_whenConstructorNotProper_shouldThrowMoodAnalysisException" classname="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" time="0.002"/>
+  <testcase name="givenMoodAnalyserClassName_whenProper_shouldReturnObject" classname="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" time="0.001"/>
+  <testcase name="givenMoodAnalyserClassName_whenImproper_shouldThrowMoodAnalysisException" classname="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" time="0.002"/>
+  <testcase name="givenMoodAnalysrClassName_whenImproper_shouldThrowMoodAnalysisException" classname="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" time="0.0"/>
+  <testcase name="givenHappyMessge_whenGetMood_shouldReturnhappyMood" classname="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" time="0.0"/>
+  <testcase name="givenMoodAnalyserClassName_whenConstructorNotProper_shouldThrowMoodAnalysisException" classname="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" time="0.001"/>
+  <testcase name="givenSadMessage_whenGetMood_ShouldReturnsadMood" classname="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" time="0.0"/>
+  <testcase name="givenEmptyMessage_whenAnalyseMood_shouldThrowMoodAnalysisException" classname="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" time="0.0"/>
+  <testcase name="givenMoodAnalyserWithParameterConstructor_whenProper_shouldReturnObject" classname="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" time="0.0"/>
+  <testcase name="givenMoodAnalyserClassName_whenInProper_shouldReturnObject" classname="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" time="0.0"/>
+  <testcase name="givenHappyMessageUsingReflection_whenProper_shouldReturnHappyMood" classname="com.BridgeLabz.moodAnalyser.MoodAnalyserTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

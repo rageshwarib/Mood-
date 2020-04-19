@@ -122,7 +122,7 @@ public class MoodAnalyserTest {
         try {
             Constructor<?> moodAnalyserConstructor = MoodAnalyserReflector.getConstructor("com.BridgeLabz.moodAnalyser.MoodAnalyser", String.class);
             MoodAnalyser moodAnalyserObject = MoodAnalyserReflector.createMoodAnalyserObject(moodAnalyserConstructor, "I am in Happy mood");
-            Object result = MoodAnalyserReflector.invokeMethod(moodAnalyserObject, "analyserWrongMood");
+            Object result = MoodAnalyserReflector.invokeMethod(moodAnalyserObject, "CreateMethod");
         } catch (MoodAnalysisException e) {
             Assert.assertEquals(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD, e.type);
         }
